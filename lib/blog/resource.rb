@@ -20,6 +20,8 @@ module Blog
 
     def call(environment)
       @resource.public_send(environment.fetch('REQUEST_METHOD'), environment)
+    rescue
+      # TODO: 500
     end
   end
 end
