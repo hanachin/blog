@@ -3,11 +3,17 @@
 module Root
   class << self
     def find(resource)
-      Object.const_get(resource.sub(/\A./, &:upcase))
+      const_get(resource.sub(/\A./, &:upcase)) if exist?(resource)
     end
 
     def GET(environment)
       [200, {}, ['hi']]
+    end
+
+    private
+
+    def exist?(resource)
+      Pathname(resource).sub_ext('.rb').expand_path(__dir__).exist?
     end
   end
 end
