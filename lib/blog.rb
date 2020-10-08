@@ -4,7 +4,7 @@ module Blog
   class << self
     def call(environment)
       # TODO: limit max nest level
-      ::Blog::Resource.find(environment.fetch('PATH_INFO').gsub(%r{/+}, '/'), ::Root).call(environment)
+      ::Root.find(environment.fetch('PATH_INFO').gsub(%r{/+}, '/')).call(environment)
     end
 
     def root_path

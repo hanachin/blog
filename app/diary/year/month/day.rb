@@ -2,6 +2,8 @@ module Diary
   class Year
     class Month
       class Day
+        include ::Blog::Resource
+
         def initialize(year:, month:, day:)
           @year = year
           @month = month

@@ -1,5 +1,9 @@
 class Foos
+  include ::Blog::Resource
+
   class << self
+    include ::Blog::Resource
+
     def find(id)
       new(id: id)
     end
