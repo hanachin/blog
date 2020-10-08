@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Foos
   include ::Blog::Resource
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Diary
   class Year
     def initialize(year:)
