@@ -10,8 +10,6 @@ class Root
       resource, sub_resource = path.split('/', 2)
       found_resource = resource.empty? ? current_resource : current_resource.find(resource)
       find(sub_resource || '', found_resource)
-    rescue
-      # TODO: 404
     end
   end
 

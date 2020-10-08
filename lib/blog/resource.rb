@@ -3,9 +3,14 @@
 module Blog
   module Resource
     def call(environment)
-      public_send(environment.fetch('REQUEST_METHOD'), environment)
+      request_method = environment.fetch('REQUEST_METHOD')
+      public_send(request_method, environment)
     rescue
-      # TODO: 500
+      internal_server_error.public_send(request_method, environment)
+    end
+
+    def internal_server_error
+      ::Blog::InternalServerError
     end
   end
 end
