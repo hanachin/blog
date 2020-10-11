@@ -13,10 +13,16 @@ module Diary
         end
 
         def GET(environment)
-          [200, { 'Content-Type' => 'text/plain; charset=UTF-8' }, [File.read(source_path)]]
+          [200, { 'Content-Type' => 'text/plain; charset=UTF-8' }, [source]]
         end
 
         private
+
+        def source
+          File.read(source_path)
+        rescue ::Errno::ENOENT
+          raise ::Blog::NotFound
+        end
 
         def source_path
           ::Blog.root_path.join('source', 'diary', @year, @month, @day).sub_ext('.md')

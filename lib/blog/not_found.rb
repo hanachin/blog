@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Blog
-  class NotFound < StandardError
+  class NotFound < ::Blog::HttpError
     def call(_environment)
       [
         404,

@@ -15,6 +15,8 @@ module Blog
 
     def call_http_method(...)
       public_send(...)
+    rescue ::Blog::HttpError
+      raise
     rescue
       raise ::Blog::InternalServerError
     end

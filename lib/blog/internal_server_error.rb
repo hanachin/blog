@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Blog
-  class InternalServerError < StandardError
+  class InternalServerError < ::Blog::HttpError
     def call(_environment)
       [
         500,

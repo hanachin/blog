@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Blog
-  class MethodNotAllowed < StandardError
+  class MethodNotAllowed < ::Blog::HttpError
     def call(_environment)
       [
         405,
