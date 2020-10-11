@@ -2,6 +2,8 @@
 
 module Diary
   class Year
+    include ::Blog::Resource
+
     def initialize(year:)
       @year = year
     end
