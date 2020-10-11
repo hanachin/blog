@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module Blog
-  class NotFound < StandardError
+  class MethodNotAllowed < StandardError
     def call(_environment)
       [
-        404,
+        405,
         { 'Content-Type' => 'text/plain' }.freeze,
-        ['404 Not Found'].freeze
+        ['405 Method Not Allowed'].freeze
       ].freeze
     end
   end

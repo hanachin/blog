@@ -13,4 +13,10 @@ loader.setup
 run -> env do
   loader.reload
   ::Blog.call(env)
+rescue => e
+  if e.respond_to?(:call)
+    e.call(env)
+  else
+    raise
+  end
 end
