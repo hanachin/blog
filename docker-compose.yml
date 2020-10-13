@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    environment:
+      HTTPS_METHOD: noredirect
+      VIRTUAL_HOST: '*.dev.hanach.in'
+    volumes:
+      - '.:/home/ubuntu/app'
+    expose:
+      - '9292'
+    networks:
+      - default
+      - nginxproxy_default
+
+networks:
+  nginxproxy_default:
+    external:
+      name: nginxproxy_default
