@@ -3,7 +3,6 @@
 module Blog
   class << self
     def call(environment)
-      # TODO: limit max nest level
       resource = ::Root.find(environment.fetch('PATH_INFO').gsub(%r{/+}, '/'))
 
       raise ::Blog::NotFound unless resource
