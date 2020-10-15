@@ -12,6 +12,8 @@ services:
     networks:
       - default
       - nginxproxy_default
+    stdin_open: true
+    tty: true
 
 networks:
   nginxproxy_default:
