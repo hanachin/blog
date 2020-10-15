@@ -25,7 +25,7 @@ module Diary
         end
 
         def source_path
-          ::Blog.root_path.join('source', 'diary', @year, @month, @day).sub_ext('.md')
+          ::Root.path.parent.join('source', 'diary', @year, @month, @day).sub_ext('.md')
         end
       end
     end

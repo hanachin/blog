@@ -11,6 +11,10 @@ class Root
       found_resource = resource.empty? ? current_resource : current_resource.find(resource)
       find(sub_resource || '', found_resource)
     end
+
+    def path
+      Pathname(__FILE__)
+    end
   end
 
   def find(resource)

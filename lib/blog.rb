@@ -9,9 +9,5 @@ module Blog
 
       resource.call(environment)
     end
-
-    def root_path
-      Pathname(__dir__).parent
-    end
   end
 end
