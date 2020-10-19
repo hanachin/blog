@@ -15,6 +15,18 @@ services:
     stdin_open: true
     tty: true
 
+  pure:
+    build:
+      context: .
+      dockerfile: Dockerfile.pure
+    networks:
+      - default
+      - nginxproxy_default
+    stdin_open: true
+    tty: true
+    volumes:
+      - '.:/home/node/app'
+
 networks:
   nginxproxy_default:
     external:

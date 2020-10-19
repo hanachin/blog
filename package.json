@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog ====",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanachin/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanachin/blog/issues"
+  },
+  "homepage": "https://github.com/hanachin/blog#readme",
+  "dependencies": {
+    "purescript": "^0.13.8",
+    "spago": "^0.16.0"
+  }
+}
