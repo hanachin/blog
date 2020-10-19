@@ -1,27 +1,11 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "Blog ====",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "build": "spago build",
-    "test": "spago test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hanachin/blog.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hanachin/blog/issues"
-  },
-  "homepage": "https://github.com/hanachin/blog#readme",
   "devDependencies": {
     "purescript": "^0.13.8",
     "spago": "^0.16.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "spago build",
+    "test": "spago test"
   }
 }
