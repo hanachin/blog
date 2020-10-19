@@ -20,7 +20,7 @@
     "url": "https://github.com/hanachin/blog/issues"
   },
   "homepage": "https://github.com/hanachin/blog#readme",
-  "dependencies": {
+  "devDependencies": {
     "purescript": "^0.13.8",
     "spago": "^0.16.0"
   }
