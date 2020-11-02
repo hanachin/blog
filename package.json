@@ -7,6 +7,8 @@
   "private": true,
   "scripts": {
     "build": "spago build",
+    "build-prod": "mkdir -p public/prod && cp public/dev/index.html public/prod/ && spago bundle-app --to public/prod/index.js && parcel build public/prod/index.html",
+    "serve": "parcel public/dev/index.html --open",
     "test": "spago test"
   }
 }

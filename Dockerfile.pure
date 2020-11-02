@@ -1,8 +1,10 @@
 FROM node:14.14.0
 
-WORKDIR /home/node/app
-COPY package.json yarn.lock ./
-RUN yarn install
-USER node
-COPY . ./
-RUN spago install halogen
+RUN apt install libtinfo5 libncurses5-dev
+# WORKDIR /home/node/app
+# ENV PATH $PATH:/home/node/app/node_modules/.bin
+# COPY --chown=node:node package.json yarn.lock ./
+# RUN yarn install
+# USER node
+# COPY --chown=node:node . ./
+# RUN spago install halogen

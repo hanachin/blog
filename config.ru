@@ -10,6 +10,12 @@ loader.push_dir("#{__dir__}/lib")
 loader.enable_reloading
 loader.setup
 
+if ENV['RACK_ENV'] == 'development'
+  use Rack::Static, urls: [''], root: 'public/dev', cascade: true, index: 'index.html'
+else
+  use Rack::Static, urls: [''], root: 'public/prod', cascade: true, index: 'index.html'
+end
+
 run -> env do
   loader.reload
   ::Blog.call(env)
